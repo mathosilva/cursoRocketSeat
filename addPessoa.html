@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <div>
+            <input type="text" id="nome">
+            <button id="add" >adicionar</button>   
+        </div>
+        <div>
+            <ul id=pessoas>               
+            </ul>
+        </div>
+
+    </head>
+    <body>
+        <script>
+            
+            var nomes = ["diego", "gabriel", "lucas"]
+            var listaPessoas = document.getElementById('pessoas')
+            var adicionar = document.getElementById('add')
+            for(var value of nomes){
+                    var novoCadastro = document.createElement('li')
+                    novoCadastro.textContent = value
+                    listaPessoas.appendChild(novoCadastro)
+                    console.log(value)
+
+            }
+            adicionar.onclick = function (){
+                let iptNome = document.getElementById('nome')
+                let texto = iptNome.value
+                var novoCadastro = document.createElement('li')
+                novoCadastro.textContent = texto
+                listaPessoas.appendChild(novoCadastro)
+                
+
+            }
+            
+
+        </script>
+    </body>
+</html>

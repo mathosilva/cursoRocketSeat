@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>    
+    </head>
+    <body>
+        <div id="app">
+            <button onclick=criar()>crie Quadrado</button>
+        </div>
+
+        <script>
+            var app = document.getElementById('app');
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }       
+
+
+            function criar(){
+                var randonColor = getRandomColor()
+                var boxElement = document.createElement('div')
+                boxElement.setAttribute('class', 'box')
+                boxElement.style.width = '100px';
+                boxElement.style.height = '100px';
+                boxElement.style.backgroundColor = randonColor;
+                app.appendChild(boxElement)
+            }            
+            
+        </script>
+    </body>
+</html>
