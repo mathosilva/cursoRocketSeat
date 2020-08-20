@@ -3,13 +3,14 @@ var buscar = document.getElementById('buscar')
 
 var repos = document.getElementById('repos')
 
-buscar.setAttribute('onclick', `listaRepos()`)
+buscar.onclick = ()=>{
+    repos.innerHTML = 'Carregando...'
+    setTimeout(listaRepos, 2000)
+}
 
 function listaRepos(){
     var usuario = iptUsuario.value
-     axios.get(`https://api.github.com/users/${usuario}/repos`) 
-    
-    // response.status
+    axios.get(`https://api.github.com/users/${usuario}/repos`)
 
     .then(function(response){
         repos.innerHTML = ''
@@ -52,3 +53,8 @@ function listaRepos(){
         console.log(error.response.status)
     })
 }
+
+
+   
+
+
